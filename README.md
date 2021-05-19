@@ -1,1 +1,1 @@
-# 06-hooks-06-effect
+# 06-hooks-02-effect
