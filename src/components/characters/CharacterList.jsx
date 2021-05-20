@@ -13,7 +13,7 @@ CharacterList.propTypes = {
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      affiliation: PropTypes.string.isRequired,
+      affiliation: PropTypes.string,
       photoUrl: PropTypes.string,
     })
   ),

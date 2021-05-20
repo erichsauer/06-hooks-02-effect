@@ -13,9 +13,9 @@ const CharacterDetail = ({ name, gender, eye, hair, weapon, photoUrl }) => {
       <p>
         {name} ({gender})
       </p>
-      <p>Eye color: {eye}</p>
-      <p>Hair color: {hair}</p>
-      <p>Weapon: {weapon}</p>
+      {eye && <p>Eye color: {eye}</p>}
+      {hair && <p>Hair color: {hair}</p>}
+      {weapon && <p>Weapon: {weapon}</p>}
       <Link to="/">Back to list</Link>
     </article>
   );

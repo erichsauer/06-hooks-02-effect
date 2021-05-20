@@ -13,7 +13,7 @@ const Character = ({ _id, name, affiliation, photoUrl, onImageError }) => {
         )}
         <figcaption>
           <h1>{name}</h1>
-          <h3>{affiliation}</h3>
+          {affiliation && <h3>{affiliation}</h3>}
         </figcaption>
       </figure>
     </Link>
@@ -23,7 +23,7 @@ const Character = ({ _id, name, affiliation, photoUrl, onImageError }) => {
 Character.propTypes = {
   _id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  affiliation: PropTypes.string.isRequired,
+  affiliation: PropTypes.string,
   photoUrl: PropTypes.string,
   onImageError: PropTypes.func.isRequired,
 };
