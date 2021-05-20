@@ -14,6 +14,7 @@ const AvatarDetail = ({
   useEffect(() => {
     (async () => {
       const character = await fetchFromApi({ id });
+      character.image = false;
       setCharacter(character);
       setLoading(false);
     })();

@@ -10,12 +10,25 @@ const AvatarList = () => {
   useEffect(() => {
     (async () => {
       const characters = await fetchFromApi({ perPage: 5, pageNumber: 1 });
+      // characters[0].photoUrl = 'broken';
       setCharacters(characters);
       setLoading(false);
     })();
   }, []);
 
-  return loading ? <Spinner /> : <CharacterList characters={characters} />;
+  const handleImageError = (id) => {
+    const updatedCharacters = characters.map((character) => {
+      if (id === character._id)
+        character.photoUrl = 'http://placekitten.com/300';
+      return character;
+    });
+    setCharacters(updatedCharacters);
+  };
+  return loading ? (
+    <Spinner />
+  ) : (
+    <CharacterList characters={characters} onImageError={handleImageError} />
+  );
 };
 
 export default AvatarList;
