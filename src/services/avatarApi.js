@@ -7,7 +7,6 @@ export default async function fetchFromApi({ id, perPage, pageNumber }) {
     return { _id, name, gender, eye, hair, weapon, photoUrl };
   } else {
     const res = await fetch(`${URL}?perPage=${perPage}&page=${pageNumber}`);
-
     const json = await res.json();
     return json.map(({ _id, name, affiliation, photoUrl }) => ({
       _id,
